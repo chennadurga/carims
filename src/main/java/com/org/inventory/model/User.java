@@ -7,7 +7,6 @@ import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 @Entity
 @Table(name = "users",
         uniqueConstraints = {
@@ -32,17 +31,11 @@ public class User {
     @Size(max = 120)
     private String password;
 
-   /* @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();*/
-
-    @NotBlank
-    @Size(max = 50)
-    private List<String> role;
-
-
+    private Set<Role> roles = new HashSet<>();
 
     public User() {
     }
@@ -85,19 +78,11 @@ public class User {
         this.password = password;
     }
 
-   /* public Set<Role> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }*/
-
-    public List<String> getRole() {
-        return role;
-    }
-
-    public void setRole(List<String> role) {
-        this.role = role;
     }
 }
