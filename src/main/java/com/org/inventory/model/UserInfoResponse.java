@@ -1,4 +1,4 @@
-package com.org.inventory.payload;
+package com.org.inventory.model;
 
 
 

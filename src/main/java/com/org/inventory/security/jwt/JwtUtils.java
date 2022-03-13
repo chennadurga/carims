@@ -19,13 +19,13 @@ import java.util.Date;
 public class JwtUtils {
     private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-    @Value("${bezkoder.app.jwtSecret}")
+    @Value("${carims.app.jwtSecret}")
     private String jwtSecret;
 
-    @Value("${bezkoder.app.jwtExpirationMs}")
+    @Value("${carims.app.jwtExpirationMs}")
     private int jwtExpirationMs;
 
-    @Value("${bezkoder.app.jwtCookieName}")
+    @Value("${carims.app.jwtCookieName}")
     private String jwtCookie;
 
     public String generateJwtToken(Authentication authentication) {

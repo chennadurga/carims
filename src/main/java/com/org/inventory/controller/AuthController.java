@@ -8,10 +8,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-import com.org.inventory.model.ERole;
-import com.org.inventory.model.Role;
-import com.org.inventory.model.User;
-import com.org.inventory.payload.*;
+import com.org.inventory.model.*;
 import com.org.inventory.repository.RoleRepository;
 import com.org.inventory.repository.UserRepository;
 import com.org.inventory.security.jwt.JwtUtils;
@@ -126,12 +123,12 @@ public class AuthController {
                         roles.add(adminRole);
 
                         break;
-                    case "mod":
+                 /*   case "mod":
                         Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
                                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                         roles.add(modRole);
 
-                        break;
+                        break;*/
                     default:
                         Role userRole = roleRepository.findByName(ERole.ROLE_USER)
                                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
